@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>新生学籍审核系统</title>
+    <link rel="stylesheet" href="asstes/css/Healthy.css">
+</head>
+<body>
+<div class="newswp clear">
+    <div class="newswp-left clear">
+        <div class="newswp-leftlogo">
+            <img src="asstes/imgs/diyiwangxiao.png" alt="">
+            <div>
+                <h2>学籍管理系统</h2>
+            </div>
+        </div>
+        <div class="newswp-leftnav">
+            <ul>
+                <li class="blue"><a href=""><img src="asstes/imgs/pic1.png" alt="">学籍注册系统 </a></li>
+                <li><a href=""><img src="asstes/imgs/pic2.png" alt="">补录系统</a></li>
+                <li><a href=""><img src="asstes/imgs/pic3.png" alt="">助学金申请系统 </a></li>
+                <li><a href=""><img src="asstes/imgs/pic4.png" alt="">团报系统</a></li>
+                <li><a href=""><img src="asstes/imgs/pic5.png" alt="">学员信息系统</a></li>
+                <li><a href=""><img src="asstes/imgs/pic6.png" alt="">分期申请系统</a></li>
+                <li><a href=""><img src="asstes/imgs/pic7.png" alt="">预约系统</a></li>
+                <li><a href=""><img src="asstes/imgs/pic8.png" alt="">保险申请系统</a></li>
+            </ul>
+        </div>
+
+    </div>
+    <div class="newswp-right clear">
+        <div class="right-swp">
+            <div class="rightmain-top">
+                <ul class="clear">
+                    <li class="left"> 2019年学籍补录申请系统 </li>
+                    <li class="right">
+                        <a href="">
+                            <img src="asstes/imgs/img1.png" alt="">
+                            返回主菜单
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="rightmain_content">
+                <div class="content">
+                    <div class="content_nav">
+                        <ul class="clear">
+                            <li class="tab1 hot"> 学籍补录系统 </li>
+                            <li class=".tab2"> 申请须知 </li>
+                        </ul>
+                    </div>
+                    <div class="new_page1">
+                        <div class="shijian" style="width: 100%; height: 26px;">
+                            <div class="showtime"></div>
+                        </div>
+                        <h1 style="font-size: 26px; height: 48px;">
+                            提醒：本批次报名即将截止，档案通道将于
+                            <span id="spantime">2019年7月8日</span>
+                            23:59关闭！！！
+                        </h1>
+                        <div class="form">
+                            <ul>
+                                <li class="li-1">
+                                    <P style="font-family:'微软雅黑';padding-left: 30px;font-size:16px;color:#666666;">
+                                    <span class="line"></span>
+                                    补录名额查询
+                                    </P>
+                                </li>
+                                <li class="li-2 clear">
+                                <dl class="clear">
+                                    <dt class="dt-1">地区</dt>
+                                    <dt class="dt-2">
+                                        <select name="" id="" style="background-color:#fff;width:155px;height:31px;line-height:31px;">
+                                            <option value="">广东</option>
+                                            <option value="">北京</option>
+                                            <option value="">天津</option>
+                                            <option value="">河北</option>
+                                            <option value="">山西</option>
+                                            <option value="">内蒙古</option>
+                                            <option value="">辽宁</option>
+                                            <option value="">吉林</option>
+                                            <option value="">黑龙江</option>
+                                            <option value="">上海</option>
+                                            <option value="">江苏</option>
+                                            <option value="">浙江</option>
+                                            <option value="">安徽</option>
+                                            <option value="">福建</option>
+                                            <option value="">江西</option>
+                                            <option value="">山东</option>
+                                            <option value="">河南</option>
+                                            <option value="">湖北</option>
+                                            <option value="">湖南</option>
+                                            <option value="">广西</option>
+                                            <option value="">海南</option>
+                                            <option value="">重庆</option>
+                                            <option value="">四川</option>
+                                            <option value="">贵州</option>
+                                            <option value="">云南</option>
+                                            <option value="">西藏</option>
+                                            <option value="">陕西</option>
+                                            <option value="">甘肃</option>
+                                            <option value="">青海</option>
+                                            <option value="">宁夏</option>
+                                            <option value="">新疆</option>
+                                        </select>
+                                    </dt>
+                                    <dt class="dt-3">时间</dt>
+                                    <dt class="dt-4">
+                                        <input type="text" class="input_cxcalendar" style="width:155px;height:27px;line-height:31px;">
+                                    </dt>
+                                    <dt class="dt-5">
+                                        <span style=" display: block;width:158px;height:31px;background:#3275ea;color:#fff;line-height:31px;border-radius: 3px;font-size: 13px;cursor:pointer;">查询</span>
+                                    </dt>
+                                </dl>
+                                </li>
+                                <li class="li-3 clear">
+                                    <dl class="clear">
+                                        <dt class="dt-6"></dt>
+                                        <dt class="dt-7">
+                                            总名额：
+                                            <span class="juli">80</span>
+
+                                            <span class="juli">
+                                                已申请名额：
+                                                <span>60</span>
+                                            </span>
+
+                                            <span class="juli">
+                                                剩余名额：
+                                                <span id="blue">20</span>
+                                            </span>
+                                        </dt>
+                                        <dt class="dt-8"></dt>
+                                    </dl>
+                                </li>
+                                <li class="li-1">
+                                    <P style="font-family:'微软雅黑';padding-left: 30px;font-size:16px;color:#666666;">
+                                        <span class="line"></span>
+                                        2019年9月健康管理师学籍补录申请表
+                                    </P>
+                                </li>
+                                <li class="li-2 clear">
+                                    <dl class="clear">
+                                        <dt class="dt-1">
+                                            <span style="color:red;">*</span>
+                                            姓名
+                                        </dt>
+                                        <dt class="dt-2">
+                                            <input type="text" class="input_cxcalendar" style="width:155px;height:27px;line-height:31px;">
+                                        </dt>
+                                        <dt class="dt-3">性别</dt>
+                                        <dt class="dt-4">
+
+                                            <select name="" style="background-color:#fff; width:155px; height:31px; line-height:31px;">
+                                                <option>男</option>
+                                                <option>女</option>
+                                            </select>
+                                        </dt>
+                                        <dt class="dt-5">
+
+                                        </dt>
+                                    </dl>
+                                </li>
+                                <li class="li-2 clear">
+                                    <dl class="clear">
+                                        <dt class="dt-1">
+                                            证件类型
+                                        </dt>
+                                        <dt class="dt-2">
+                                            <select name="" style="background-color:#fff; width:155px; height:31px; line-height:31px;">
+                                                <option value="">居民身份证</option>
+                                                <option value="">港澳台身份证</option>
+                                                <option value="">华侨身份证（无身份证可填护照</option>
+                                                <option value="">其他</option>
+                                            </select>
+                                        </dt>
+                                        <dt class="dt-3">
+                                            <span style="color:red;">*</span>
+                                            身份证后四位
+                                        </dt>
+                                        <dt class="dt-4">
+                                            <input type="text" class="input_cxcalendar" style="width:155px;height:27px;line-height:31px;">
+                                        </dt>
+                                        <dt class="dt-5">
+
+                                        </dt>
+                                    </dl>
+                                </li>
+                                <li class="li-2 clear">
+                                    <dl class="clear">
+                                        <dt class="dt-1">
+                                            <span style="color:red;">*</span>
+                                            手机号码
+                                        </dt>
+                                        <dt class="dt-2">
+                                            <input type="text" class="input_cxcalendar" style="width:155px;height:27px;line-height:31px;">
+                                        </dt>
+                                        <dt class="dt-3">现学历阶段</dt>
+                                        <dt class="dt-4">
+
+                                            <select name="" style="background-color:#fff; width:155px; height:31px; line-height:31px;">
+                                                <option>无</option>
+                                                <option>初中</option>
+                                                <option>高中</option>
+                                                <option>中专</option>
+                                                <option>大专</option>
+                                                <option>本科</option>
+                                                <option>其他</option>
+                                            </select>
+                                        </dt>
+                                        <dt class="dt-5">
+
+                                        </dt>
+                                    </dl>
+                                </li>
+                                <li class="li-2 clear">
+                                    <dl class="clear">
+                                        <dt class="dt-1">
+                                            地区
+                                        </dt>
+                                        <dt class="dt-2">
+                                            <select name="" style="background-color:#fff;width:155px;height:31px;line-height:31px;">
+                                                <option value="">广东</option>
+                                                <option value="">北京</option>
+                                                <option value="">天津</option>
+                                                <option value="">河北</option>
+                                                <option value="">山西</option>
+                                                <option value="">内蒙古</option>
+                                                <option value="">辽宁</option>
+                                                <option value="">吉林</option>
+                                                <option value="">黑龙江</option>
+                                                <option value="">上海</option>
+                                                <option value="">江苏</option>
+                                                <option value="">浙江</option>
+                                                <option value="">安徽</option>
+                                                <option value="">福建</option>
+                                                <option value="">江西</option>
+                                                <option value="">山东</option>
+                                                <option value="">河南</option>
+                                                <option value="">湖北</option>
+                                                <option value="">湖南</option>
+                                                <option value="">广西</option>
+                                                <option value="">海南</option>
+                                                <option value="">重庆</option>
+                                                <option value="">四川</option>
+                                                <option value="">贵州</option>
+                                                <option value="">云南</option>
+                                                <option value="">西藏</option>
+                                                <option value="">陕西</option>
+                                                <option value="">甘肃</option>
+                                                <option value="">青海</option>
+                                                <option value="">宁夏</option>
+                                                <option value="">新疆</option>
+                                            </select>
+                                        </dt>
+                                        <dt class="dt-3">户口</dt>
+                                        <dt class="dt-4">
+
+                                            <select name="" style="background-color:#fff; width:155px; height:31px; line-height:31px;">
+                                                <option>本地户口</option>
+                                                <option>非本地户口</option>
+                                            </select>
+                                        </dt>
+                                        <dt class="dt-5">
+
+                                        </dt>
+                                    </dl>
+                                </li>
+                                <li class="li-2 clear">
+                                    <dl class="clear">
+                                        <dt class="dt-1">
+                                           学校
+                                        </dt>
+                                        <dt class="dt-2">
+                                            <input type="text" placeholder="请输入学校名称" class="input_cxcalendar" style="width:155px;height:27px;line-height:31px;">
+                                        </dt>
+                                        <dt class="dt-3">报考证书</dt>
+                                        <dt class="dt-4">
+
+                                            <input type="text" placeholder="请输入专业名称" class="input_cxcalendar" style="width:155px;height:27px;line-height:31px;">
+                                        </dt>
+                                        <dt class="dt-5">
+
+                                        </dt>
+                                    </dl>
+                                </li>
+                                <li class="li-4">
+                                    <a href="">立即注册</a>
+                                </li>
+                                <li class="li-5 clear">
+                                    <dl class="clear">
+                                        <dt class="dtone"></dt>
+                                        <dt class="dttwo">
+                                            <div>
+                                                <span style="line-height:22px;padding-top:10px;"> 注：1、报考信息统一录入第一网校系统，考前指导学员报名</span>
+                                                <br>
+                                                <span id="spans" style="line-height:22px;padding-bottom:10px;">   2、提交之前务必确认学员报考信息正确，以免错报误报。</span>
+                                            </div>
+                                        </dt>
+                                    </dl>
+                                </li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                    <div class="new_page2">
+
+                        <div class="page2_title">
+
+                            2018年上学籍补录提前须知
+
+                        </div>
+                        <div class="page2_text">
+                            <p>日前，教育部下达了关于全国高校学籍管理系统学生信息的补录工作的通知,凡是在上一次在第一次招生的时候因为填报人数少而导致招生人数未满的学校，都可以进行第二次补录。</p>
+                            <p>第一网校机构作为官方授权的教育服务机构，拥有15年的自考培训经验，已帮助30万学员完成梦想，每年的自考通过率高达95%。为了帮助第一网校机构高等教育自学考试（以下简称自考）学员更好的获得补录资格，顺利参加考试，第一网校机构特此开通自考报名补录通道。具体要求如下：</p>
+                            <p>一、 适用范围：</p>
+                            <p>1. 正在参加第一网校机构自考各专业培训课程，且在5月29日报考截止前没报上名的学员；</p>
+                            <p>2. 已经报名第一网校机构自考各专业培训课程，且在5月29日报考截止前没报上名的学员；</p>
+                            <p>二、 补录名额及截止日期：</p>
+                            <p>1. 第一网校机构各地区补录名额为100个。</p>
+                            <p>2. 补录时间为2019年9月7日9：00-6月15日23：59。</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="new_btn2">
+    <a href="" style=" text-decoration:none;cursor:pointer; display:block; background:#38b7ff; color:#FFF; font-size:16px; width:180px; height:45px; line-height:45px;-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; -khtml-user-select: none; user-select: none; text-align:center; border-radius:5px; z-index:9; font-family:'Microsoft Yahei';">
+        点击修改名额
+    </a>
+</div>
+<div class="new_btn3">
+    <a href="" style=" text-decoration:none;cursor:pointer; display:block; background:#ff5f65; color:#FFF; font-size:16px; width:180px; height:45px; line-height:45px;-moz-user-select: none; -webkit-user-select: none; -ms-user-select: none; -khtml-user-select: none; user-select: none; text-align:center; border-radius:5px; z-index:9; font-family:'Microsoft Yahei';">
+        点击修改到校时间
+    </a>
+</div>
+
+<!--<script src="jquery.js"></script>-->
+<!--<script src="asstes/js/index.js"></script>-->
+
+<script>
+
+    //向段落里面写入数字1：
+    var oP = document.getElementsByClassName("showtime")[0];
+    var li_one = document.querySelectorAll(".newswp-leftnav ul li");
+    var li_two = document.querySelectorAll(".content_nav ul li");
+    var new_page1 = document.querySelector(".new_page1");
+    var new_page2 = document.querySelector(".new_page2");
+    function changeTime(){
+        var odate = new Date();        //说明：当前的日期对象，要想实时获得当前的时间，就需要实时的获得当前的日期对象
+        var year = odate.getFullYear();
+        var month = odate.getMonth()+1;
+        month = month < 10 ? '0'+month:month;
+        var day = odate.getDate();
+        day = day < 10 ? '0'+day:day;
+        var hour = odate.getHours();
+        var minute = odate.getMinutes();
+        var second = odate.getSeconds();
+
+        oP.innerHTML = "填表时间："+year+'年'+month+'月'+day+'日'+hour+'时'+minute+'分'+second+'秒';
+    }
+    //var timer = setInterval(changeTime(), 1000);    //先调用函数，每隔1秒执行返回的结果
+
+    var timer = setInterval(changeTime, 1000);        //每隔1秒，通过changeTime变量找到function体并执行
+
+    //让时间继续切换，每隔1秒执行一次
+    function goon(){
+        clearInterval(timer);
+        //表示使用的就是全局的变量
+        timer = setInterval(changeTime, 1000);
+    }
+
+    //清除定时器,参数就是设置定时器时返回的结果
+    function stop()
+    {
+        clearInterval(timer);
+    }
+
+
+    for (var i = 0; i <li_one.length ; i++) {
+        li_one[i].onmouseover = function () {
+            for (var i = 0; i <li_one.length ; i++) {
+                li_one[i].className = "";
+            }
+            this.className = "blue";
+        }
+    }
+    for (var i = 0; i <li_two.length; i++) {
+        li_two[i].index = i;
+        li_two[i].onclick = function () {
+            for (var i = 0; i <li_two.length ; i++) {
+                li_two[i].className = "";
+            }
+          this.className = "hot";
+           index = this.index;
+            if (index == 0){
+                new_page1.style.display = "block";
+                new_page2.style.display = "none";
+            }else {
+                new_page1.style.display = "none";
+                new_page2.style.display = "block";
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .clear:after{
+            display: block;
+            content: "";
+            clear: both;
+        }
+        ul{
+            list-style-type: none;
+        }
+        ul li{
+            float: left;
+            margin-right: 5px;
+            background-color: #4b8fed;
+            color: #fff;
+            border: 1px solid #98E0E6;
+            font-size: 12px;
+            padding: 5px 15px;
+            cursor: pointer;
+            border-bottom: none;
+        }
+        .tt{
+            margin: 100px;
+
+        }
+        .container{
+            width: 300px;
+            height: 150px;
+            border: 1px solid #98E0E6;
+
+        }
+        .container div{
+            display: none;
+        }
+        .container .show{
+            display: block;
+        }
+        .colour{
+            background-color: goldenrod;
+        }
+    </style>
+</head>
+<body>
+<div class="tt">
+<ul class="clear">
+    <li class="colour">时事</li>
+    <li>娱乐</li>
+    <li>体育</li>
+</ul>
+
+<div class="container">
+    <div class="show">时事</div>
+    <div>娱乐</div>
+    <div>体育</div>
+</div>
+</div>
+
+
+<script>
+    var lis = document.getElementsByTagName("li")
+    var container = document.getElementsByClassName("container")[0].children;
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].index = i;
+        lis[i].onclick = function () {
+            for (var j = 0; j < lis.length;j++){
+                lis[j].className = ""
+            }
+            this.className = "colour"
+            for (var k = 0;k < container.length;k++){
+                container[k].className = "";
+            }
+            container[this.index].className = "show";
+        }
+    }
+</script>
+</body>
+</html>

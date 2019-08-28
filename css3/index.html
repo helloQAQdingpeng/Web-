@@ -1,0 +1,396 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .column-pic-move{
+            margin-left: 100px;
+        }
+        .clear{
+            clear: both;
+        }
+        .intro-wrapper{
+            height: 680px;
+            margin-top: 300px;
+        }
+        .intro-pic{
+            height: 100%;
+            width: 50%;
+            float: left;
+            overflow: hidden;
+        }
+        .intro-pic .column-pic{
+            float: left;
+            width: 87px;
+            height: 1200px;
+            margin-left: 22px;
+            background-size: 87px 1187px;
+            transition-property:all;
+            transition-duration:1.5s;
+            transition-timing-function:ease;
+        }
+        .column-pic-move .column-1{
+            margin-top: -225px;
+        }
+        .column-pic-move .column-2{
+            margin-top: -293px;
+        }
+        .column-pic-move .column-3{
+            margin-top: -227px;
+        }
+        .column-pic-move .column-4{
+            margin-top: -290px;
+        }
+        .column-pic-move .column-5{
+            margin-top: -225px;
+        }
+        .column-pic-move .column-6{
+            margin-top: -291px;
+        }
+        .column-1{
+            background: url("asstes/image/tubiao1@2x.png");
+
+        }
+        .column-2{
+            background: url("asstes/image/tubiao2@2x.png");
+
+        }
+        .column-3{
+            background: url("asstes/image/tubiao3@2x.png");
+
+        }
+        .column-4{
+            background: url("asstes/image/tubiao4@2x.png");
+
+        }
+        .column-5{
+            background: url("asstes/image/tubiao5@2x.png");
+
+        }
+        .column-6{
+            background: url("asstes/image/tubiao6@2x.png");
+
+        }
+
+        .intro-detail{
+            float: right;
+            opacity: 0;
+            transform: translate(-310px,300px);
+            transition: all 1s ease;
+        }
+
+        .active .intro-detail{
+                transform: translate(-312px,80px);
+                opacity: 1;
+        }
+        .title{
+        font-size: 25px;
+        }
+        .title h1{
+        font-weight: 200;
+        }
+        .content{
+        font-size: 20px;
+}
+        .work{
+            width: 0;
+            height: 675px;
+            background-color: #2980ff;
+            transition: all 1s ease;
+        }
+        .active .work{
+            width: 100%;
+            transform: translate(0px,0px);
+            position: relative;
+        }
+        .intro-wrapper-one{
+            width: 50%;
+            float: left;
+        }
+        .work .intro-wrapper-one .title-one{
+            color: #fff;
+            font-size: 70px;
+            transform: translate(200px,800px);
+            transition: all 1s ease;
+            transition-delay: 1s;
+            opacity: 0;
+        }
+        .active  .intro-wrapper-one .title-one{
+            transform: translate(200px,200px);
+            opacity: 1;
+        }
+        .intro-wrapper-one .content-one p{
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.8;
+            margin-top: 12px;
+        }
+        .work .intro-wrapper-one .content-one{
+            transform: translate(200px,800px);
+            transition: all 1s ease;
+            transition-delay: 1s;
+            opacity: 0;
+        }
+        .active  .intro-wrapper-one .content-one{
+            transform: translate(200px,200px);
+            opacity: 1;
+        }
+        .intro-detail-one{
+            float: left;
+            width: 50%;
+        }
+
+
+
+
+        .privacy{
+            background: url("asstes/image/secrect.jpg");
+            width: 100%;
+            height: 680px;
+        }
+        .privacy .detail{
+            position: relative;
+            width: 210px;
+            height: 153px;
+            background: url("asstes/image/lock@2x.png");
+            background-size: cover;
+            transform: translate(200px,800px);
+            transition: all 1s ease;
+        }
+        .active .privacy .detail{
+            transform: translate(200px,300px);
+
+        }
+        .active .privacy .detail{
+            -webkit-animation: wobble 2s 1.5s ease;
+        }
+        .active .privacy .detail{
+            -webkit-animation: bounceDown 1s 3s ease;
+        }
+        .active .privacy .detail span{
+            -webkit-animation: wobble 2s 1.5s ease;
+        }
+        .privacy .detail span{
+            position: absolute;
+            top: -120px;
+            left: 27px;
+            width: 157px;
+            height: 121px;
+            background: url("asstes/image/lock-t@2x.png");
+            background-size: cover;
+            transform: translate(0px,0px);
+        }
+        @-webkit-keyframes bounceDown {
+            0% {
+                margin-top: -10px;
+
+            }
+
+            40% {
+                margin-top:0px;
+
+            }
+
+            70% {
+                margin-top: -10px;
+
+            }
+
+            100% {
+                margin-top: 0px;
+
+            }
+        }
+        @-webkit-keyframes wobble{
+            0% {
+                margin-top: -10px;
+
+            }
+            40% {
+                margin-top:-20px;
+
+            }
+            60% {
+                margin-top: -25px;
+
+            }
+            100% {
+                margin-top: 0px;
+
+            }
+        }
+        .one{
+            position: relative;
+        }
+        .privacy .detail div{
+            content: "";
+            width: 8px;
+            height: 32px;
+            position: absolute;
+            top: -25px;
+            left: 27px;
+            background-image: url("asstes/image/lock-t@2x.png");
+            background-position: bottom left;
+        }
+        .privacy .pic{
+            width: 218px;
+            height: 270px;
+            background: url("asstes/image/shield@2x.png");
+            background-size: cover;
+            position: absolute;
+            left: 470px;
+            top: 180px;
+            transform: translate(0px,800px);
+            transition: all 1s ease;
+        }
+        .active .privacy .pic{
+            transform: translate(0px,0px);
+        }
+        .privacy .pic span{
+            background: url("asstes/image/shield-check@2x.png");
+            background-size: cover;
+            display: block;
+            position: absolute;
+            left: 67px;
+            top: 84px;
+            transition: all 3s ease;
+            width: 0px;
+            height: 76px;
+        }
+        .active .privacy .pic span{
+            width: 100px;
+            height: 76px;
+            transform: translate(0px,0px);
+        }
+        .safety{
+            position: absolute;
+            right: 300px;
+            top: 250px;
+            transition: all 1s ease;
+            transform: translate(0px,800px);
+        }
+        .active .safety{
+            transform: translate(0px,0px);
+        }
+        .safety .title{
+            font-size: 70px;
+            color: #fff;
+        }
+        .safety .matter{
+            font-size: 30px;
+            color: #fff;
+            opacity: 0.6;
+        }
+
+    </style>
+</head>
+<body>
+<h2>腾讯微云</h2>
+<div class="intro-wrapper">
+    <div class="intro-pic">
+    <div class="column-pic column-1"></div>
+    <div class="column-pic column-2"></div>
+    <div class="column-pic column-3"></div>
+    <div class="column-pic column-4"></div>
+    <div class="column-pic column-5"></div>
+    <div class="column-pic column-6"></div>
+</div>
+    <div class="intro-detail">
+        <div class="title">
+            <h1>稳定可靠的</h1>
+            <h1>储存任何文件</h1>
+        </div>
+        <div class="content">
+            <p>多端查看、下载分享文件</p>
+            <p>便捷的文件管理</p>
+            <p>多种格式文件在线预览</p>
+        </div>
+    </div>
+    <div class="clear"></div>
+</div>
+<div class="work-content">
+    <div class="work">
+        <div class="intro-wrapper-one">
+            <div class="title-one">
+                在线办公全新体验
+            </div>
+            <div class="content-one">
+                <p>文档在线编辑，云端自动保存</p>
+                <p>多人协作编辑，多端即时同步</p>
+                <p>历史版本恢复，保障文档安全</p>
+            </div>
+        </div>
+        <div class="intro-detail-one">
+            <img src="asstes/image/slide-1.png" alt="" width="843" height="680">
+        </div>
+    </div>
+</div>
+
+
+
+<div class="one">
+<div class="privacy">
+<div class="detail">
+        <span></span>
+    <div></div>
+</div>
+
+
+
+<div class="two">
+
+    <div class="pic">
+        <span>
+
+        </span>
+    </div>
+
+</div>
+
+</div>
+    <div class="safety">
+        <div class="title">
+            安全与隐私保护
+        </div>
+
+        <div class="matter">
+            <p>持续稳定的储存服务</p>
+            <p>安全可靠的文件传输、储存、隐私保护</p>
+        </div>
+    </div>
+</div>
+
+
+<script src="jquery.js"></script>
+<script>
+    $(function () {
+        var index = 0;
+        var position=[20,200,600,900,1100];
+        $(window).scroll(function () {
+            var top = $(window).scrollTop();
+            console.log(top)
+            if(top > position[index]){
+                $(".intro-pic").eq(index).addClass('column-pic-move');
+                $(".intro-wrapper").eq(index).addClass('active');
+                $(".work-content").eq(index).addClass('active');
+                $(".work").eq(index).addClass('active');
+                $(".one").eq(index).addClass('active');
+                $(".two").eq(index).addClass('active');
+                index++;
+            }
+        })
+
+
+
+    })
+</script>
+</body>
+</html>

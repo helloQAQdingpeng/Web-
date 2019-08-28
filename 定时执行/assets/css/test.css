@@ -1,0 +1,71 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.banner{
+    margin: 50px auto;
+    width: 800px;
+    position: relative;
+}
+.banner ul{
+    list-style-type: none;
+}
+.logo ul li a img{
+    width: 800px;
+}
+.clear:after{
+    display: block;
+    content: "clear";
+    clear: both;
+    height: 0;
+    visibility: hidden;
+    overflow: hidden;
+}
+
+.logo ul li{
+    display: none;
+}
+.logo ul .show{
+    display: block;
+}
+.number{
+    position: absolute;
+    bottom: 10px;
+    left:calc(800px/2 - 132px/2)
+}
+.number ul li{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background-color: #030000;
+    color: white;
+    text-align: center;
+    line-height: 20px;
+    font-size: 14px;
+    margin-left: 2px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+.number ul .red{
+    background-color: red;
+}
+
+.btn div{
+    background-color: #666666;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 10px;
+    cursor: pointer;
+
+}
+.left{
+    position: absolute;
+    left: 0px;
+    top:calc(450px/2 - 54px/2)
+}
+.right{
+    position: absolute;
+    right: 0px;
+    top:calc(450px/2 - 54px/2)
+}

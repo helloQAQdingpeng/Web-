@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #box {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+<!--0 ~ 400px-->
+
+<!--开始位置 start 0-->
+<!--结束位置 end 100-->
+
+x如果固定，这就是匀速
+box.style.left = x + "px"
+
+<!--start = start + (end - start) / 10; 步长-->
+
+
+<button id="btn">开始</button>
+<div id="box"></div>
+
+<script>
+    var target = 500;
+
+    var a =0.14*100
+
+    a=Math.floor(a)
+
+    btn.onclick = function () {
+
+        timer = setInterval(function () {
+            // 盒子本身的位置  +  步长 (不断变化的)
+
+            var step = (target - box.offsetLeft) / 10;   // 步长  0->(0+50) 50->(45+50)
+
+            step = Math.ceil(step)
+            box.style.left = box.offsetLeft+step+'px'
+
+            if (box.offsetLeft == target) // 判断结束条件
+            {
+                clearInterval(timer);
+                alert("到目标了")
+            }
+
+        }, 20)
+
+    }
+
+</script>
+</body>
+</html>

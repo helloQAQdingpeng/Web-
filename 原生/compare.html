@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+        <input type="text" id="num1">
+        <input type="text" id="num2">
+        <input type="text" id="num3">
+
+
+
+        <button id="btn">比较</button>
+</body>
+
+
+<script>
+        var  num1 = document.getElementById("num1")
+        var  num2 = document.getElementById("num2")
+        var  num3 = document.getElementById("num3")
+        var  btn = document.getElementById("btn")
+
+        btn.onclick = (function (e) {
+            e.preventDefault()
+
+            var x = parseInt(num1.value)
+            var y = parseInt(num2.value)
+            var z = parseInt(num3.value)
+
+
+
+            if (x>y && x>z){
+                alert(x)
+            }else if (y>x && y>z) {
+                alert(y)
+            }else  if(z>x && z>y) {
+                alert(z)
+            }
+        })
+
+</script>
+
+</html>

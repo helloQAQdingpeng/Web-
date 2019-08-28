@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/demo.css"/>
+	</head>
+	<body>
+		<div class="fenshu">
+			<span>分数：</span>
+			<span class="fenshubox"></span>
+		</div>
+		<div class="stop">
+			<img class="stop-1" src="img/start.png"/>
+			<img class="stop-2" src="img/pause.png"/>
+		</div>
+		<div class="startGame">
+			<img src="img/startGame.png"/>
+		</div>
+		<div class="content">
+			
+			<ul>
+				<li class="a">
+					<img src="img/head.png"/>
+				</li>
+				<li class="b">
+					<img src="img/body.png"/>					
+				</li>
+				<li class="c">
+					<img src="img/body.png"/>					
+				</li>
+			
+			</ul>	
+				<div class="food">
+					<img src="img/apple.png"/>					
+				</div>
+		</div>
+		<div class="over">
+			<span class="fenshubox" ></span>
+			<img class="cha" src="img/closeBtn.png"/>
+		</div>
+		<script type="text/javascript">
+			var cha = document.getElementsByClassName('cha')[0];
+			var fenshu = document.getElementsByClassName('fenshubox');
+			var ul = document.getElementsByTagName('ul')[0];
+			var li = document.getElementsByTagName('li');
+			var over = document.getElementsByClassName('over')[0];
+			var startGame = document.getElementsByClassName('startGame')[0];
+			var stop = document.getElementsByClassName('stop-1')[0]
+			var stop2 = document.getElementsByClassName('stop-2')[0]
+			var divFood = document.getElementsByClassName('food')[0]
+			var fenshu1 = 0;
+			fenshu[0].innerHTML = fenshu1;
+			var left4 = [];
+			var top20 = [];
+			var m = 0;
+			var l = 0;
+			var sudu = 500;
+			for (var s=0;s<7;s++) {
+				for (var z = 0; z<320 ; z +=20) {
+					top20[l] = z;
+					l++;
+				}
+				for (var num=0; num<100; num+=4) {
+					left4[m] = num;
+					m++;
+				}
+			
+			}
+			function cleaFood(){
+				var foodTop = top20[parseInt((Math.random()*100))]+'px';
+				var foodLeft = left4[parseInt((Math.random()*100))]+'%';				
+				divFood.style.top = foodTop;
+				divFood.style.left = foodLeft;
+			}
+			
+			
+			function move(left,top){
+							for (var w = li.length-1; w>2; w--) {
+								li[w].style.left = parseInt(li[w-1].style.left) - 0 + '%';
+								li[w].style.top = li[w-1].style.top; 
+							}
+							li[2].style.left = parseInt(li[1].style.left) - 0 + '%'
+							li[2].style.top = li[1].style.top; 
+							li[1].style.left = parseInt(li[0].style.left) - 0 + '%'
+							li[1].style.top = li[0].style.top; 
+							li[0].style.left = parseInt(li[0].style.left) + 4 + '%';
+//				li[0].style.left = parseInt(li[0].style.left) + left + '%';	
+//				for (var w = 1 ; w < li.length ; w++) {	
+//					li[w].style.left = parseInt(li[w-1].style.left) - left + '%';	
+//				}
+////				aaa(li.length-2);
+////				if (top) {
+////					li[0].style.top = parseInt(li[0].style.top) + top + 'px';
+//					for (var w = 1 ; w < li.length ; w++) {	
+//						li[w].style.top = parseInt(li[w-1].style.top) - 0 + 'px'
+//					}	
+////				}
+							
+			}
+			function peng(){
+				var l1 = li[0].offsetLeft;
+				var r1 = li[0].offsetLeft + li[0].offsetWidth;
+				var t1 = li[0].offsetTop;
+				var b1 = li[0].offsetTop + li[0].offsetHeight;
+				var l2 = divFood.offsetLeft;
+				var r2 = divFood.offsetLeft + divFood.offsetWidth;
+				var t2 = divFood.offsetTop;
+				var b2 = divFood.offsetTop + divFood.offsetHeight;
+				if ( r1==r2 && b1==b2 && l1==l2 && t1==t2) {
+					console.log(123456789);
+					cleaFood();
+					var newi = document.createElement('li');
+					newi.innerHTML = '<img src="img/body.png"/>'
+					sudu -= 5;
+					ul.appendChild(newi);
+					newi.style.display = 'block';
+					newi.style.top = '9000px';
+					fenshu1++;
+					fenshu[0].innerHTML = fenshu1;
+					fenshu[1].innerHTML = fenshu1;
+				}
+				for (var i=1; i < li.length; i++) {
+				var l3 = li[i].offsetLeft;
+				var r3 = li[i].offsetLeft + li[i].offsetWidth;
+				var t3 = li[i].offsetTop;
+				var b3 = li[i].offsetTop + li[i].offsetHeight;
+					if (r1==r3 && b1==b3 && l1==l3 && t1==t3) {
+						over.style.display = 'block';
+						stop.style.display = 'none';
+						stop2.style.display = 'none';	
+						for (var i = 0;i < li.length ;i++ ) {
+							li[i].style.display = 'none';
+						}
+					}	
+				}
+			}
+			cleaFood();
+			li[0].style.left = '8%';
+			li[1].style.left = '4%';
+			li[1].style.top = '0px';
+			li[0].style.top = '0px';
+			document.onkeydown = test;
+			cha.style.display = 'none';
+			stop2.onclick = function(){
+				for (var c=1; c<100000;c++) {
+					clearInterval(c);
+				}				
+			}
+			startGame.onclick = function(){
+				stop2.style.display = 'block'
+				startGame.style.display = 'none';
+				for (var i = 0; i < 3; i ++) {
+					li[i].style.display = 'block'
+				}
+				divFood.style.display = 'block'
+			var time1 = setInterval(function(){
+				move(4,0);
+	
+				//					li[w].style.top = parseInt(li[w-1].style.left) - 4 + '%'
+//							li[1].style.top = li[0].style.top; 
+//							li[1].style.left = parseInt(li[0].style.left) - 4 + '%'
+//							li[2].style.left = parseInt(li[1].style.left) - 4 + '%'
+//							li[2].style.top = li[1].style.top; 
+				if (parseInt(li[0].style.top) < 0 ||parseInt(li[0].style.top) > 301 ) {
+					over.style.display = 'block';
+					stop.style.display = 'none';
+					stop2.style.display = 'none';
+					
+					for (var i = 0;i < li.length ;i++ ) {
+						li[i].style.display = 'none';
+					}
+				}
+				if (parseInt(li[0].style.left) < 0 || parseInt(li[0].style.left) > 96) {
+					over.style.display = 'block';
+					stop.style.display = 'none';
+					stop2.style.display = 'none';
+										
+					for (var i = 0;i < li.length ;i++ ) {
+						li[i].style.display = 'none';
+					}
+				}
+				peng();
+			},sudu);
+			}
+			function test(e){
+				switch (e.key){
+					case 'ArrowRight':
+
+					if (!(li[1].offsetLeft == li[0].offsetLeft + li[0].offsetWidth)) {
+						if (parseInt(li[0].style.left) < 97 && startGame.style.display === 'none') {
+							move(4,0);
+														if (peng()) {
+								console.log(1111);
+							}
+							for (var c=1; c<100000;c++) {
+								clearInterval(c);
+							}
+							setInterval(function(){
+							move(4,0);	
+							if (parseInt(li[0].style.top) < 0 ||parseInt(li[0].style.top) > 301 ) {
+								over.style.display = 'block';
+								stop.style.display = 'none';
+								stop2.style.display = 'none';
+					
+								for (var i = 0;i < li.length ;i++ ) {
+									li[i].style.display = 'none';
+								}
+							}
+							if (parseInt(li[0].style.left) < 0 || parseInt(li[0].style.left) > 96) {
+								over.style.display = 'block';
+								stop.style.display = 'none';
+								stop2.style.display = 'none';
+										
+								for (var i = 0;i < li.length ;i++ ) {
+									li[i].style.display = 'none';
+							}
+							}
+							peng();
+							},sudu);
+							peng();
+						}
+					}
+					break;
+					case 'ArrowUp':
+					if (!(li[0].offsetTop == li[1].offsetTop + li[1].offsetHeight)) {
+						if (parseInt(li[0].style.top) > -1 && startGame.style.display === 'none') {
+							for (var w = li.length-1; w>2; w--) {
+								li[w].style.left = parseInt(li[w-1].style.left) - 0 + '%';
+								li[w].style.top = li[w-1].style.top; 
+							}							
+							li[2].style.top = parseInt(li[1].style.top) + 0 + 'px';
+							li[2].style.left = li[1].style.left; 
+							li[1].style.top = parseInt(li[0].style.top) + 0 + 'px' ; 
+							li[1].style.left = (li[0].style.left); 
+							li[0].style.top = parseInt(li[0].style.top) - 20 + 'px';
+							for (var c=1; c<100000;c++) {
+								clearInterval(c);
+							}
+							 setInterval(function(){
+							for (var w = li.length-1; w>2; w--) {
+								li[w].style.left = parseInt(li[w-1].style.left) - 0 + '%';
+								li[w].style.top = li[w-1].style.top; 
+							}							
+							li[2].style.top = li[1].style.top;
+							li[2].style.left = li[1].style.left; 
+							li[1].style.top = parseInt(li[0].style.top) - 0 + 'px' ; 
+							li[1].style.left = (li[0].style.left); 
+							li[0].style.top = parseInt(li[0].style.top) - 20 + 'px';
+							if (parseInt(li[0].style.top) < 0 ||parseInt(li[0].style.top) > 301 ) {
+								over.style.display = 'block';
+								stop.style.display = 'none';
+								stop2.style.display = 'none';
+					
+								for (var i = 0;i < li.length ;i++ ) {
+									li[i].style.display = 'none';
+								}
+							}
+							if (parseInt(li[0].style.left) < 0 || parseInt(li[0].style.left) > 96) {
+								over.style.display = 'block';
+								stop.style.display = 'none';
+								stop2.style.display = 'none';
+										
+								for (var i = 0;i < li.length ;i++ ) {
+									li[i].style.display = 'none';
+							}
+							}
+							peng();
+							},sudu);
+							peng();
+						}
+					}
+
+						break;
+					case 'ArrowDown':
+					if (!(li[1].offsetTop == li[0].offsetTop + li[0].offsetHeight)) {
+											
+						if (parseInt(li[0].style.top) < 301 && startGame.style.display === 'none') {
+							for (var w = li.length-1; w>2; w--) {
+								li[w].style.left = parseInt(li[w-1].style.left) - 0 + '%';
+								li[w].style.top = li[w-1].style.top; 
+							}
+							li[2].style.top = parseInt(li[1].style.top) - 0 + 'px';
+							li[2].style.left = li[1].style.left; 
+							li[1].style.top = parseInt(li[0].style.top) - 0 + 'px' ; 
+							li[1].style.left = (li[0].style.left); 
+							li[0].style.top = parseInt(li[0].style.top) + 20 + 'px';
+							for (var c=1; c<100000;c++) {
+								clearInterval(c);
+							}
+							 setInterval(function(){
+							 	for (var w = li.length-1; w>2; w--) {
+									li[w].style.left = parseInt(li[w-1].style.left) - 0 + '%';
+									li[w].style.top = li[w-1].style.top; 
+							}
+							li[2].style.top = parseInt(li[1].style.top) - 0 + 'px';
+							li[2].style.left = li[1].style.left; 
+							li[1].style.top = parseInt(li[0].style.top) - 0 + 'px' ; 
+							li[1].style.left = (li[0].style.left); 
+							li[0].style.top = parseInt(li[0].style.top) + 20 + 'px';
+							if (parseInt(li[0].style.top) < 0 ||parseInt(li[0].style.top) > 301 ) {
+								over.style.display = 'block';
+								stop.style.display = 'none';
+								stop2.style.display = 'none';
+					
+								for (var i = 0;i < li.length ;i++ ) {
+									li[i].style.display = 'none';
+								}
+							}
+							if (parseInt(li[0].style.left) < 0 || parseInt(li[0].style.left) > 96) {
+								over.style.display = 'block';
+								stop.style.display = 'none';
+								stop2.style.display = 'none';
+										
+								for (var i = 0;i < li.length ;i++ ) {
+									li[i].style.display = 'none';
+							}
+							}
+							peng();
+							},sudu);
+							peng();
+						}
+					}
+					break;
+
+					case 'ArrowLeft':
+					if (!(li[0].offsetLeft == li[1].offsetLeft + li[1].offsetWidth)) {
+						if (parseInt(li[0].style.left) > -1 && startGame.style.display === 'none') {
+							for (var w = li.length-1; w>2; w--) {
+								li[w].style.left = parseInt(li[w-1].style.left) - 0 + '%';
+								li[w].style.top = li[w-1].style.top; 
+							}
+							li[2].style.left = parseInt(li[1].style.left) - 0 + '%'
+							li[2].style.top = li[1].style.top; 
+							li[1].style.left = parseInt(li[0].style.left) - 0 + '%'
+							li[1].style.top = li[0].style.top; 
+							li[0].style.left = parseInt(li[0].style.left) - 4 + '%';
+							for (var c=1; c<100000;c++) {
+								clearInterval(c);
+							}
+							 setInterval(function(){
+							 for (var w = li.length-1; w>2; w--) {
+								li[w].style.left = parseInt(li[w-1].style.left) - 0 + '%';
+								li[w].style.top = li[w-1].style.top; 
+							}
+							li[2].style.left = parseInt(li[1].style.left) - 0 + '%'
+							li[2].style.top = li[1].style.top; 
+							li[1].style.left = parseInt(li[0].style.left) - 0 + '%'
+							li[1].style.top = li[0].style.top; 
+							li[0].style.left = parseInt(li[0].style.left) - 4 + '%';	
+							if (parseInt(li[0].style.top) < 0 ||parseInt(li[0].style.top) > 301 ) {
+								over.style.display = 'block';
+								stop.style.display = 'none';
+								stop2.style.display = 'none';
+					
+								for (var i = 0;i < li.length ;i++ ) {
+									li[i].style.display = 'none';
+								}
+							}
+							if (parseInt(li[0].style.left) < 0 || parseInt(li[0].style.left) > 96) {
+								over.style.display = 'block';
+								stop.style.display = 'none';
+								stop2.style.display = 'none';
+										
+								for (var i = 0;i < li.length ;i++ ) {
+									li[i].style.display = 'none';
+							}
+							}
+							peng();
+							},sudu);
+							peng();
+						}						
+						break;
+						
+					}
+					
+				}
+				
+				if (parseInt(li[0].style.top) < 0 ||parseInt(li[0].style.top) > 301 ) {
+					over.style.display = 'block';
+					stop.style.display = 'none';
+					stop2.style.display = 'none';
+					
+					for (var i = 0;i < li.length ;i++ ) {
+						li[i].style.display = 'none';
+					}
+				}
+				if (parseInt(li[0].style.left) < 0 || parseInt(li[0].style.left) > 96) {
+					over.style.display = 'block';
+					stop.style.display = 'none';
+					stop2.style.display = 'none';
+										
+					for (var i = 0;i < li.length ;i++ ) {
+						li[i].style.display = 'none';
+					}
+				}
+							peng();
+			}
+
+			
+			
+			
+		</script>
+	</body>
+</html>

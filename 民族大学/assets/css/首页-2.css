@@ -1,0 +1,113 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.clear{
+    clear: both;
+}
+/*顶部导航*/
+.nav{
+    background-color: #222222;
+    height: 70px;
+}
+.logo{
+    float: left;
+    margin: 10px 0 0 60px;
+}
+.topnav ul{
+    list-style-type: none;
+    float: right;
+    line-height: 70px;
+
+}
+.topnav ul li{
+    float: left;
+    margin-right: 50px;
+}
+.topnav ul li a{
+    text-indent: -9999px;
+}
+.topnav ul .ligk a{
+    width: 75px;
+    height: 70px;
+    display: block;
+    background: url("../img/nav.png") -5px 5px;
+}
+.topnav ul .lidw a{
+    width: 75px;
+    height: 70px;
+    display: block;
+    background: url("../img/nav.png") -90px 5px;
+}
+.topnav ul .litj a{
+    width: 75px;
+    height: 70px;
+    display: block;
+    background: url("../img/nav.png") -180px 5px;
+}
+.topnav ul .licg a{
+      width: 75px;
+      height: 70px;
+      display: block;
+      background: url("../img/nav.png") -270px 5px;
+  }
+.topnav ul .lihd a{
+    width: 75px;
+    height: 70px;
+    display: block;
+    background: url("../img/nav.png") -350px 5px;
+}
+.topnav ul .ligl a{
+    width: 75px;
+    height: 70px;
+    display: block;
+    background: url("../img/nav.png") -430px 5px;
+}
+.topnav ul .lixz a{
+    width: 75px;
+    height: 70px;
+    display: block;
+    background: url("../img/nav.png") -520px 5px;
+}
+/*顶部导航*/
+.content{
+    margin: 0 auto;
+    width: 970px;
+}
+.br{
+    height: 15px;
+    background-color: greenyellow;
+}
+.notice{
+    margin: 20px auto 0;
+    width: 770px;
+    border-left: 1px solid #707070;
+    border-right: 1px solid #707070;
+    padding-left: 15px;
+    padding-right: 20px;
+}
+.notice .img{
+    float: left;
+    padding-top: 10px;
+}
+.notice ul{
+    list-style-type: none;
+    float: right;
+    font-size: 14px;
+}
+.notice ul li{
+    padding: 10px 0 ;
+}
+.notice ul a{
+    text-decoration: none;
+    color: #222222;
+    font-weight: bold;
+}
+.notice ul li .a{
+    color: yellowgreen;
+}
+/*通知公告*/
+.line{
+    margin: 0 auto;
+    width: 625px;
+}

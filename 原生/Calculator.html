@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="">
+<input type="text" id="num1">
+<select name="" id="fh">
+    <option value="+">+</option>
+    <option value="-">-</option>
+    <option value="*">*</option>
+    <option value="/">/</option>
+</select>
+<input type="text" id="num2">
+<button id="btn">计算</button>
+</form>
+
+
+
+
+<script>
+    var num1 = document.getElementById("num1");
+    var num2 = document.getElementById("num2");
+    var fh = document.getElementById("fh");
+    var btn = document.getElementById("btn");
+    btn.onclick = (function (e) {
+        e.preventDefault();
+        var x = parseInt(num1.value);
+        var y = parseInt(num2.value);
+        var z = fh.value;
+        var q;
+        //
+        // if (z === "+"){
+        //     q = x + y
+        // }else if (z === "-"){
+        //     q = x - y
+        // }else if (z === "*"){
+        //     q = x * y
+        // }else
+        //     q = x / y;
+        // alert(q)
+        switch (z) {
+            case "+":
+                q = x + y;
+                break;
+            case "-":
+                q = x - y;
+                break;
+            case "/":
+                q = x / y;
+                break;
+            default:
+                q = x * y;
+        }
+       alert(q)
+    })
+</script>
+</body>
+
+
+
+</html>

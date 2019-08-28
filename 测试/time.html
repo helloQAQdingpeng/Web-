@@ -1,0 +1,46 @@
+type html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>无标题文档</title>
+</head>
+
+<body>
+<p id="num"></p>
+<a href="javascript:stop()">让时间停止吧</a>
+<a href="javascript:goon()">让时间继续吧</a>
+</body>
+</html>
+<script>
+    //向段落里面写入数字1：
+    var oP = document.getElementById("num");
+    function changeTime(){
+        var odate = new Date();        //说明：当前的日期对象，要想实时获得当前的时间，就需要实时的获得当前的日期对象
+        var year = odate.getFullYear();
+        var month = odate.getMonth()+1;
+        month = month < 10 ? '0'+month:month;
+        var day = odate.getDate();
+        day = day < 10 ? '0'+day:day;
+        var hour = odate.getHours();
+        var minute = odate.getMinutes();
+        var second = odate.getSeconds();
+
+        oP.innerHTML = "当前时间："+year+'-'+month+'-'+day+'&nbsp;&nbsp;'+hour+':'+minute+':'+second;
+    }
+    //var timer = setInterval(changeTime(), 1000);    //先调用函数，每隔1秒执行返回的结果
+
+    var timer = setInterval(changeTime, 1000);        //每隔1秒，通过changeTime变量找到function体并执行
+
+    //让时间继续切换，每隔1秒执行一次
+    function goon(){
+        clearInterval(timer);
+        //表示使用的就是全局的变量
+        timer = setInterval(changeTime, 1000);
+    }
+
+    //清除定时器,参数就是设置定时器时返回的结果
+    function stop()
+    {
+        clearInterval(timer);
+    }
+</script>

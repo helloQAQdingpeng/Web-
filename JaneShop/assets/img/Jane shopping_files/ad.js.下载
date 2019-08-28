@@ -1,0 +1,54 @@
+/* 首页大屏广告效果 */
+$(function(){
+	
+
+	var $imgrolls = $("#jnImageroll div a");
+    var len  = $imgrolls.length;
+	var index = 0;
+	var adTimer = null;
+
+	//定时执行切换
+	function change(){
+		index++;
+		//console.log(index);
+		if(index==len){
+			index=0;
+		}
+		showImg();
+	}
+
+	//显示不同的幻灯片
+	function showImg(){
+		var $rollobj = $("#jnImageroll");
+		var $rolllist = $rollobj.find("div a");
+		var newhref = $rolllist.eq(index).attr("href");
+		$("#JS_imgWrap").attr("href",newhref).find("img").eq(index).stop(true,true).fadeIn().siblings().fadeOut();
+		$rolllist.removeClass("chos").eq(index).addClass("chos"); 
+	}
+
+	//adTimer = setInterval(function(){change(index,len)} , 3000);
+	adTimer = setInterval(change , 3000);
+
+	$imgrolls.mouseover(function(){
+		index = $imgrolls.index(this);
+		showImg();
+	});	
+
+	//滑入 停止动画，滑出开始动画.
+	$('#jnImageroll').hover(function(){
+		if(adTimer){ 
+			clearInterval(adTimer);
+		}
+	},function(){
+		adTimer = setInterval(function(){
+			index++;
+		    showImg();
+			if(index==len){
+				index=0;
+			}
+		} , 3000);
+	})
+})
+
+
+

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<ul class="new">
+    <li>
+        <div id="time"></div>
+        <div id="title"></div>
+    </li>
+
+</ul>
+
+<script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+
+<script>
+    $(function () {
+        $.get("https://itfun.tv/api/v1/news.json",function (data) {
+            console.log(data.notices)
+
+            $.each(data.notices, function (key, value) {
+                var html = ' <li>' +
+                    '        <div id="time">'+ value.created_at+'</div>' +
+                    '        <div id="title">'+ value.title+'</div>' +
+                    '    </li>'
+
+                $(".new").append(html);
+            })
+
+
+        })
+
+
+
+
+
+    })
+</script>
+</body>
+</html>

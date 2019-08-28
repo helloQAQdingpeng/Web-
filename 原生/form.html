@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .form{
+            margin: 100px 100px;
+        }
+
+    </style>
+</head>
+
+
+
+<body>
+
+        <div class="form">
+                <label for="">用户名:</label>
+                <input type="text" id="ff">
+        </div>
+
+
+        <script>
+            var  ff = document.getElementById("ff")
+            ff.onkeyup = function () {
+                var x = ff.value.length;
+
+                if (x < 6){
+                    alert("不能小于6")
+                }else {
+                    alert("输入正确")
+                }
+            }
+
+
+
+        </script>
+</body>
+</html>

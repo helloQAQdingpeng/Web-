@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            list-style-type: none;
+            padding: 100px 100px;
+        }
+        ul li{
+            margin: 20px 0px;
+        }
+        .bule{
+            background-color: #00A5FF;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+
+
+<script>
+    var li = document.getElementsByTagName("li")
+
+for (var i = 0;i < 5;i++){
+    li[i].onmouseenter = function () {
+        for (var k = 0;k < 5;k++){
+            if (k%2==0){
+                li[k].className = "bule"
+            } else {
+                li[k].className = ""
+            }
+        }
+    }
+
+
+    li[i].onmouseleave = function () {
+        for (var l = 0;l < 5;l++){
+            li[l].className = ""
+            if (l%2==1) {
+                li[l].className = "bule"
+            }
+        }
+    }
+}
+
+    //
+    //     for (var i = 0;i < li.length;i++) {
+    //         li[i].onmouseenter = function () {
+    //         for(var i = 0;i < li.length;i++){
+    //             li[i].className = ""
+    //             this.className = "bule"
+    //         }
+    //
+    //     }
+    // }
+
+    // for (var i = 0 ;i<li.length;i++) {
+    //
+    //     li[i].onmouseenter = function () {
+    //         for(var j = 0 ;j<li.length;j++){
+    //
+    //             if(j%2==1){
+    //                 li[j].className = "bule"
+    //             }
+    //         }
+    //     }
+    //     li[i].onmouseleave  = function () {
+    //         for(var k = 0; k < 5 ; k++){
+    //             li[k].className = ""
+    //         }
+    //     }
+    // }
+
+</script>
+</body>
+</html>

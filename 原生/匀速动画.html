@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .slide {
+            width: 600px;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+            height: 260px;
+        }
+
+        .slide ul.imgs {
+            width: 5000px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+        }
+
+        .slide ul.imgs li {
+            float: left;
+        }
+
+        .ctrl {
+            font-size: 24px;
+        }
+
+        .ctrl .prev, .ctrl .next {
+            cursor: pointer;
+            position: absolute;
+            top: 110px;
+            padding: 16px 10px;
+            color: rgba(0, 0, 0, .5);
+        }
+
+        .ctrl .prev {
+            left: 0px;
+        }
+
+        .ctrl .next {
+            right: 0px;
+        }
+
+        .ctrl .prev:hover, .ctrl .next:hover {
+            background: rgba(0, 0, 0, .1);
+            color: #fff;
+        }
+
+        .dot {
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            z-index: 1;
+            width: 600px;
+        }
+
+        .dot span {
+            display: inline-block;
+            bottom: 10px;
+            width: 8px;
+            height: 8px;
+            border-radius: 4px;
+            margin: 0 4px;
+            background: rgba(0, 0, 0, .3);
+            transition: all .3s;
+            cursor: pointer;
+        }
+
+        .dot span.hover {
+            width: 28px;
+            background: #fff;
+        }
+    </style>
+</head>
+
+
+<body>
+<div class="slide">
+    <ul class="imgs">
+        <li><img src="img/js.jpg" alt=""></li>
+        <li><img src="img/php.jpg" alt=""></li>
+        <li><img src="img/h5.jpg" alt=""></li>
+        <li><img src="img/rails.jpg" alt=""></li>
+        <li><img src="img/css.jpg" alt=""></li>
+    </ul>
+
+    <div class="ctrl">
+        <div class="prev"> &lt;</div>
+        <div class="next"> &gt;</div>
+    </div>
+
+    <div class="dot">
+        <span class="hover"></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</div>
+<script>
+    var next = document.querySelector(".next");
+    var prev = document.querySelector(".prev");
+    var imgs = document.querySelector(".imgs");
+    var index = 0;
+    var timer;
+    var num = 0;
+
+    var play =function(){
+        timer = setInterval(function () {
+            num--;
+            var target = -600*index;
+
+            if (imgs.offsetLeft == target) {
+                clearInterval(timer);
+            } else {
+                imgs.style.left = num + "px";
+            }
+        },1)
+    };
+    next.onclick = function () {
+        index++;
+        if (index == 5){
+            index = 0
+            timer = setInterval(function () {
+                num++;
+                var target = -600*index;
+
+                if (imgs.offsetLeft == target) {
+                    clearInterval(timer);
+                } else {
+                    imgs.style.left = num + "px";
+                }
+            },1)
+        }else{
+            play();
+        }
+        console.log(index);
+    }
+
+
+</script>
+</body>
+</html>

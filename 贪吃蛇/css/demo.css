@@ -1,0 +1,144 @@
+*{
+	padding: 0;
+	margin:0 ;
+}
+html{
+	overflow: hidden;
+}
+body{
+		width: 100%;
+	height: 1000px;
+	background: url('../img/bg.jpg');
+	border: 5px solid black;
+	background-size: 100% 1000px;
+	position: relative;
+}
+.content{
+	border: 3px solid black;
+	width: 38.7%;
+	height: 320px;
+	margin: 303px auto;
+	position: relative;
+	left: -4px;
+}
+.stop{
+	width: 5%;
+	position: absolute;
+	/*border: 1px solid red;*/
+	height: 50px;
+	top: 40px;
+	left: 8%;
+	border-radius:50% ;
+	overflow: hidden;
+	
+}
+.stop img{
+	cursor: pointer;
+	position: absolute;
+	width: 200%;
+	height: 90px;
+	top: -20px;
+	left: -51%;
+}
+.stop-1{
+	display: none;
+}
+.stop-2{
+	display: none;
+}
+div.startGame{
+	position: absolute;
+	width: 20%;
+	/*border: 2px solid red;*/
+	margin: 0 auto;
+	left: 40%;
+	top: 50%;
+	z-index: 999;
+	height: 69px;
+	overflow: hidden;
+	/*display: none;*/
+}
+div.startGame img{
+	width: 100%;
+	height: 190px;
+	margin-top: -61px;
+}
+div.startGame img:hover{
+	cursor: pointer;
+}
+.over{
+	height: 300px;
+	width: 30%;
+	border: 1px solid #ffffff;
+	position: absolute;
+	left: 35%;
+	top: 31%;
+	background: url('../img/startP.jpg');
+	background-size:100% 100% ;
+	z-index: 1000;
+	/*text-align: center;*/
+	border-radius: 50%;
+	display: none;
+}
+.over img{
+	position: absolute;
+	right:0 ;
+	top: 0px;
+	cursor: pointer;
+	width: 10%;
+}
+.over span{
+	color: black;
+	font-size:30px ;
+	/*margin-top:30px ;*/
+	position: absolute;
+	top: 122px;
+	left: 40%;
+}
+ul li{
+	/*float: left;*/
+	height: 20px;
+	width: 4%;
+	/*border: 1px solid red;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: none;
+}
+ul li.a{
+	z-index: 3;
+	left: 8%;
+	top:0px;
+}
+ul li.b{
+	left: 4%;
+	border-top-style: 0px;
+}
+ul li img{
+	height: 20px;
+	width: 100%;
+}
+.food{
+	height: 20px;
+	width: 4%;
+	/*border: 1px solid red;*/
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	display: none;	
+}
+.food img{
+	height: 100%;
+	width: 100%;
+}
+div.fenshu{
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 300px;
+	/*border: 10px solid black;*/
+}
+div.fenshu span{
+	font-size: 30px;
+	color: #FFFFFF;
+}

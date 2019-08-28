@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        ul{
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+
+
+<button id="selectAll">全选</button>
+<button id="invert">反选</button>
+<button id="cancel">取消</button>
+<button id="even">偶数</button>
+<button id="odd">奇数</button>
+
+<ul>
+    <li><input type="checkbox">1</li>
+    <li><input type="checkbox">2</li>
+    <li><input type="checkbox">3</li>
+    <li><input type="checkbox">4</li>
+    <li><input type="checkbox">5</li>
+    <li><input type="checkbox">6</li>
+    <li><input type="checkbox">7</li>
+    <li><input type="checkbox">8</li>
+</ul>
+
+
+<script>
+function $(id) {
+    return document.getElementById(id)
+}
+var li = document.getElementsByTagName("li");
+var checkboxes = document.getElementsByTagName("input");
+$("selectAll").onclick = function () {
+    for (var i = 0; i < li.length; i++) {
+        checkboxes[i].checked = true;
+    }
+};
+
+$("invert").onclick = function () {
+    for (var i = 0; i < li.length; i++) {
+        checkboxes[i].checked = !checkboxes[i].checked
+    }
+};
+
+$("cancel").onclick = function () {
+    for (var i = 0; i < li.length; i++) {
+        checkboxes[i].checked = false;
+    }
+};
+for (var i = 0;i < li.length; i++){
+    $("even").onclick = function () {
+        for (var l = 0; l < li.length;l++){
+            checkboxes[l].checked = false;
+            if (l%2==0) {
+                checkboxes[l].checked = true;
+            }
+        }
+    };
+    $("odd").onclick = function () {
+        for (var l = 0; l < li.length;l++){
+            checkboxes[l].checked = false;
+            if (l%2==1) {
+                checkboxes[l].checked = true;
+            }
+        }
+    }
+}
+
+</script>
+</body>
+</html>

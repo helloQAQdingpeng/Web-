@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.clear{
+    clear: both;
+}
+.list{
+    margin: 50px 100px;
+    overflow: hidden;
+    width: 756px;
+    position: relative;
+    height: 164px;
+
+}
+.list ul{
+    list-style-type: none;
+    width: 3000px;
+   position: absolute;
+}
+.list ul li{
+    float: left;
+    margin:0 1px;
+}
+.btn div{
+    width: 30px;
+    height: 40px;
+    background-color: #666666;
+    color: #fff;
+    text-align: center;
+    line-height: 40px;
+    float: left;
+    cursor: pointer;
+    opacity: 0.6;
+
+}
+.btn .left{
+    position: absolute;
+    top:calc(168px/2 - 40px/2);
+    left: 0px;
+}
+.btn .right{
+    position: absolute;
+    top:calc(168px/2 - 40px/2);
+    right: 0px;
+}

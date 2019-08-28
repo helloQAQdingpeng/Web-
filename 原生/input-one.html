@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            padding: 0px;
+            margin: 0px;
+        }
+        body{
+            background: url("img/roma.jpg") no-repeat;
+            background-size: cover;
+        }
+        form{
+            margin: 100px;
+        }
+        select{
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+        <form action="">
+            <select name="" id="btn">
+                <option value="castle">图1</option>
+                <option value="lucerne">图2</option>
+                <option value="roma">图3</option>
+                <option value="venice">图4</option>
+            </select>
+        </form>
+</body>
+<script>
+        var btn = document.getElementById("btn")
+        btn.onchange = (function () {
+            k = btn.value
+            l = "img/" + k + ".jpg"
+            document.body.style.backgroundImage = "url(" + l + ")";
+        })
+</script>
+</html>

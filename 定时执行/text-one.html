@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/test.css">
+</head>
+<body>
+<div class="banner">
+    <div class="logo">
+        <ul>
+            <li class="show"><a href="#"><img src="assets/img/1.jpg" alt=""></a></li>
+            <li><a href="#"><img src="assets/img/2.jpg" alt=""></a></li>
+            <li><a href="#"><img src="assets/img/3.jpg" alt=""></a></li>
+            <li><a href="#"><img src="assets/img/4.jpg" alt=""></a></li>
+            <li><a href="#"><img src="assets/img/5.jpg" alt=""></a></li>
+            <li><a href="#"><img src="assets/img/6.jpg" alt=""></a></li>
+        </ul>
+    </div>
+    <div class="number clear">
+        <ul class="clear">
+            <li class="red">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <div class="btn clear">
+        <div class="left">  <  </div>
+        <div class="right">  >  </div>
+    </div>
+
+
+
+</div>
+
+<script>
+    var lis = document.getElementsByTagName("ul")[1].children;
+    var imgs = document.getElementsByTagName("ul")[0].children;
+    var banner = document.getElementsByClassName("banner")[0];
+    var right = document.getElementsByClassName("right")[0];
+    var left = document.getElementsByClassName("left")[0];
+    var index = 0;
+    var play = function () {
+        for (var i = 0;i < lis.length;i++){
+            lis[i].className = ""
+        }
+        lis[index].className = "red";
+        for (var i = 0;i < lis.length;i++){
+            imgs[i].style.display = "none"
+        }
+        imgs[index].style.display = "block"
+    };
+    //定时执行
+    function run() {
+        index++;
+        if (index == 5) index = 0;
+        play();
+    }
+    var id = setInterval(run,1000);
+
+
+    for (var i = 0;i < lis.length;i++){
+        lis[i].index = i;
+        banner.onmouseover = function () {
+            clearInterval(id)
+        };
+        banner.onmouseout = function () {
+            id = setInterval(run,1000)
+        };
+        lis[i].onmouseover = function () {
+            index = this.index;
+            play()
+        };
+    }
+    // right.onclick = function () {
+    //     index++;
+    //     if (index == 6) index = 0;
+    //     for (var i = 0;i < lis.length;i++){
+    //         lis[i].className = ""
+    //         imgs[i].style.display = "none"
+    //     }
+    //     lis[index].className = "red"
+    //     imgs[index].style.display = "block"
+    // };
+    // left.onclick = function () {
+    //     index--;
+    //     if (index < 0) index = 5;
+    //     for (var i = 0;i < lis.length;i++){
+    //         lis[i].className = ""
+    //         imgs[i].style.display = "none"
+    //     }
+    //     lis[index].className = "red"
+    //     imgs[index].style.display = "block"
+    // }
+
+    right.onclick = function () {
+        index++;
+        if (index == 6) index = 0;
+        play();
+    };
+    left.onclick = function () {
+        index--;
+        if (index < 0) index = 5;
+        play();
+    }
+</script>
+</body>
+</html>

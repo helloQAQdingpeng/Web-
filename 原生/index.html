@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .img{
+            text-align: center;
+            background-color: #fff;
+            opacity: 0.7;
+            cursor: pointer;
+
+        }
+        .img img{
+            width: 200px;
+        }
+        body{
+            background: url("img/h5.jpg");
+        }
+    </style>o
+</head>
+
+
+<body>
+
+
+<div class="img">
+            <span><img src="img/h5.jpg" alt="" id="h5"></span>
+            <span><img src="img/js.jpg" alt="" id="js"></span>
+
+</div>
+
+
+<script>
+        var h5 = document.getElementById("h5")
+        var js = document.getElementById("js")
+
+        js.onclick = (function () {
+
+            document.body.style.backgroundImage = "url(img/" + "js" + ".jpg)"
+        })
+        h5.onclick = (function () {
+
+            document.body.style.backgroundImage = "url(img/" + "h5" + ".jpg)"
+        })
+
+
+
+</script>
+
+</body>
+</html>

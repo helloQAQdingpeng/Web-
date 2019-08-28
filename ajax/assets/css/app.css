@@ -1,0 +1,59 @@
+body {
+    padding-top: 50px;
+    padding-bottom: 68px;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.courses {
+    padding-bottom: 78px;
+    padding: 10px;
+}
+
+.courses h1 {
+    margin-top: 15px;
+    font-size: 22px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+}
+
+.footer div {
+    height: 68px;
+    text-align: center;
+    border-top: 1px solid #ddd;
+}
+
+.footer div a {
+    font-size: 12px;
+    display: block;
+    margin-top: 12px;
+    color: #999;
+}
+
+.footer div a span {
+    font-size: 24px;
+}
+
+
+.footer .active a {
+    color: #1f99b0;
+}
+
+.media img {
+    width: 120px;
+    border-radius: 2px;
+}
+
+.media h4 {
+    font-size: 16px;
+}
